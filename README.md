@@ -43,13 +43,85 @@ Render the result to the HTML template.
 Publish the website in Localhost.
 
 ## PROGRAM:
+```
+views.py
 
+from django.shortcuts import render
+
+def calculate_Total(request):
+
+    P = 0
+    GST = 0
+    Total = 0
+
+    if request.method == "POST":
+        P = float(request.POST.get('Price', 0))
+        GST = float(request.POST.get('GST', 0))
+        Total = P + (P * GST / 100)
+
+        print("Price =", P)
+        print("GST =", GST)
+        print("Total =", Total)
+
+    return render(request, 'mathapp/math.html', {'P': P, 'GST': GST, 'Total': Total})
+
+    urls.py
+
+    from django.urls import path
+from mathapp import views
+urlpatterns = [path('', views.calculate_Total, name='Total')]
+
+math.html
+
+<html>
+<head>
+<title>Total Bill</title>
+<style>
+body{
+    background: lightblue;
+    text-align:center;
+}
+.box{
+    background:blue;
+    color:white;
+    width:300px;
+    margin:100px auto;
+    padding:20px;
+}
+h2{ color:pink; }
+</style>
+</head>
+<body>
+<div class="box">
+<h2>TOTAL BILL AMOUNT</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+Price:<br>
+<input type="number" name="Price" step="any" required><br><br>
+
+GST(%):<br>
+<input type="number" name="GST" step="any" required><br><br>
+
+<button type="submit">Calculate</button><br><br>
+
+Total:<br>
+<input type="text" value="{{ Total }}" readonly>
+
+</form>
+
+</div>
+</body>
+</html>
+
+```
 
 ## OUTPUT - SERVER SIDE:
-
+![alt text](<Screenshot 2026-02-26 215130.png>)
 
 ## OUTPUT - WEBPAGE:
-
+![alt text](<Screenshot 2026-02-26 215855.png>)
 
 ## RESULT:
 The a web page to calculate total bill amount with GST from price and GST percentage using server-side scripts is created successfully.
