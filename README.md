@@ -1,5 +1,5 @@
 # Ex.04 Design a Website for Server Side Processing
-## Date:
+## Date:27-02-2026
 
 ## AIM:
 To create a web page to calculate total bill amount with GST from price and GST percentage using server-side scripts.
@@ -118,10 +118,10 @@ Total:<br>
 ```
 
 ## OUTPUT - SERVER SIDE:
-![alt text](<Screenshot 2026-02-26 215130.png>)
+![alt text](<Screenshot 2026-02-27 143505.png>)
 
 ## OUTPUT - WEBPAGE:
-![alt text](<Screenshot 2026-02-26 215855.png>)
+![alt text](<Screenshot 2026-02-27 143410.png>)
 
 ## RESULT:
 The a web page to calculate total bill amount with GST from price and GST percentage using server-side scripts is created successfully.
