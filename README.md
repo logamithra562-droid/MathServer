@@ -75,53 +75,68 @@ math.html
 
 <html>
 <head>
-<title>Total Bill</title>
+<title>Total Bill Calculator</title>
+
 <style>
 body{
-    background: lightblue;
-    text-align:center;
+    background-color: lightblue;
+    text-align: center;
+    font-family: Arial;
 }
+
 .box{
-    background:blue;
-    color:white;
-    width:300px;
-    margin:100px auto;
-    padding:20px;
+    background-color: blue;
+    color: white;
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
 }
-h2{ color:pink; }
+
+h2{
+    color: pink;
+}
 </style>
+
 </head>
+
 <body>
+
 <div class="box">
-<h2>TOTAL BILL AMOUNT</h2>
+
+<h1>TOTAL BILL AMOUNT</h1>
+<h2>logamithra.k (25005891)</h2>
 
 <form method="POST">
 {% csrf_token %}
 
-Price:<br>
+<label>Price:</label><br>
 <input type="number" name="Price" step="any" required><br><br>
 
-GST(%):<br>
+<label>GST (%):</label><br>
 <input type="number" name="GST" step="any" required><br><br>
 
-<button type="submit">Calculate</button><br><br>
+<button type="submit">Calculate</button>
 
-Total:<br>
+<br><br>
+
+<label>Total:</label><br>
 <input type="text" value="{{ Total }}" readonly>
 
 </form>
 
 </div>
+
 </body>
 </html>
 
 ```
 
 ## OUTPUT - SERVER SIDE:
-![alt text](<Screenshot 2026-02-27 143505.png>)
+![alt text](<Screenshot 2026-03-11 200954.png>)
 
 ## OUTPUT - WEBPAGE:
-![alt text](<Screenshot 2026-02-27 143410.png>)
+![alt text](<Screenshot 2026-03-11 200927.png>)
 
 ## RESULT:
 The a web page to calculate total bill amount with GST from price and GST percentage using server-side scripts is created successfully.
